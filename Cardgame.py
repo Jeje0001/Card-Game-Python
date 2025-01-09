@@ -14,3 +14,26 @@ class Card:
     def __str__(self):
         return self.rank + " of " + self.suit
 
+class deck:
+    def __init__(self):
+        self.all=[]
+
+        for suit in suits:
+            for rank in ranks:
+                createdcard=Card(suit,rank)
+                self.all.append(createdcard)
+
+    def shuffle(self):
+        random.shuffle(self.all)
+
+    def deal_one(self):
+        return self.all.pop()
+new=deck()
+new.shuffle()
+
+# for card in new.all:
+#     print(card)
+first=new.all[-1]
+print(first.suit)
+
+print(new.deal_one())
